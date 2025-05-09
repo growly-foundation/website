@@ -1,6 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
+import Link from "next/link";
 
 type Member = {
   name: string;

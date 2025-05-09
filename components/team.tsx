@@ -1,16 +1,7 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { Button } from "@/components/ui/button";
-import TeamCard from "./team-card";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  type CarouselApi,
-} from "@/components/ui/carousel";
 import { MEMBERS } from "@/lib/constants";
+import TeamCard from "./team-card";
 
 export default function Team() {
   return (
@@ -23,7 +14,7 @@ export default function Team() {
           Who we are
         </h2>
         <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full">
-          {MEMBERS.slice(0, 3).map((member, index) => (
+          {MEMBERS.slice(0, 3).map((member) => (
             <TeamCard key={member.name} member={member} />
           ))}
         </div>

@@ -12,7 +12,7 @@ interface ProjectsProps {
 }
 
 const Projects = ({ limit = 3, showViewAll = true }: ProjectsProps) => {
-  const [selectedFilter, setSelectedFilter] = useState<FILTER>(FILTER.ALL);
+  const [selectedFilter] = useState<FILTER>(FILTER.ALL);
 
   const filteredProjects = useMemo(() => {
     const filtered = PROJECTS.filter((project) => {

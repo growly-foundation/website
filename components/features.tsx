@@ -1,6 +1,5 @@
-import Image from "next/image";
-import { Card, CardHeader, CardContent } from "@/components/ui/card";
-import { Briefcase, Users, BarChart2 } from "lucide-react";
+import { Card, CardContent, CardHeader } from "@/components/ui/card";
+import { BarChart2, Briefcase, Users } from "lucide-react";
 
 const FEATURES = [
   {
