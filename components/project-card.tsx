@@ -17,8 +17,7 @@ export type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const { theme } = useTheme();
-  const websiteIcon =
-    theme === "dark" ? "/icons/dribble-white.svg" : "/icons/dribble.svg";
+  const websiteIcon = "/icons/devfolio.svg";
   const githubIcon =
     theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
 

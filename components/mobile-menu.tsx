@@ -53,7 +53,7 @@ export function MobileMenu({
       <div className="fixed flex w-full px-5 z-10">
         <div
           className={cn(
-            "w-full rounded-[120px] px-5 py-2 mt-3 bg-gradient-to-tr from-[#171717] to-[#0E0E0E] dark:from-[#171717] dark:to-[#0E0E0E] light:from-[#f8f9fa] light:to-[#e9ecef] flex items-center justify-between",
+            "w-full rounded-[120px] px-5 py-2 mt-3 bg-gradient-to-tr dark:from-[#171717] dark:to-[#0E0E0E] from-[#f8f9fa] to-[#e9ecef] flex items-center justify-between",
             className
           )}
           {...other}
@@ -129,17 +129,6 @@ function MainMobileMenu({
   return (
     <div className="fixed inset-0 z-50 mt-[69px] overflow-y-auto bg-background animate-in fade-in-0">
       <div className="flex size-full flex-col items-start space-y-3 p-4">
-        <div className="flex w-full flex-col gap-2">
-          <Button
-            size="lg"
-            color="secondary"
-            className="px-[22px] md:px-[44px] font-bold rounded-full"
-            onClick={onLinkClicked}
-            asChild
-          >
-            <Link href="/#cta">Contact Us</Link>
-          </Button>
-        </div>
         <ul className="w-full">
           {MENU_LINKS.map((item) => (
             <li key={item.title} className="py-2">
