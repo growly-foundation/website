@@ -12,8 +12,7 @@ export default function Projects() {
       <div className="flex flex-col items-center text-center gap-4 mb-8">
         <h2 className="text-2xl font-semibold">Our Projects</h2>
         <p className="text-muted-foreground max-w-2xl">
-          Explore some of the projects we've built to help teams work smarter
-          and faster.
+          Explore some of the projects we&apos;ve built
         </p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto justify-items-center">
