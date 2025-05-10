@@ -10,6 +10,7 @@ import { RemoveScroll } from "react-remove-scroll";
 
 import { MENU_LINKS } from "@/components/menu-links";
 import { Button, buttonVariants } from "@/components/ui/button";
+import ThemeSwitcher from "@/components/theme-switcher";
 import { cn } from "@/lib/utils";
 
 export function MobileMenu({
@@ -52,7 +53,7 @@ export function MobileMenu({
       <div className="fixed flex w-full px-5 z-10">
         <div
           className={cn(
-            "w-full rounded-[120px] px-5 py-2 mt-3 bg-gradient-to-tr from-[#171717] to-[#0E0E0E] flex items-center justify-between",
+            "w-full rounded-[120px] px-5 py-2 mt-3 bg-gradient-to-tr from-[#171717] to-[#0E0E0E] dark:from-[#171717] dark:to-[#0E0E0E] light:from-[#f8f9fa] light:to-[#e9ecef] flex items-center justify-between",
             className
           )}
           {...other}
@@ -73,35 +74,38 @@ export function MobileMenu({
               alt="Growly Foundation logo mobile"
             />
           </Link>
-          <Button
-            variant="ghost"
-            size="icon"
-            aria-expanded={open}
-            aria-label="Toggle Mobile Menu"
-            onClick={handleToggleMobileMenu}
-            className="flex aspect-square h-fit select-none flex-col items-center justify-center rounded-full"
-          >
-            <motion.div
-              className="w-5 origin-center border-t-2 border-primary"
-              initial={{ translateY: "0px" }}
-              animate={
-                open
-                  ? { rotate: "45deg", translateY: "6px" }
-                  : { rotate: "0deg", translateY: "0px" }
-              }
-              transition={{ bounce: 0, duration: 0.1 }}
-            />
-            <motion.div
-              className="w-5 origin-center border-t-2 border-primary"
-              transition={{ bounce: 0, duration: 0.1 }}
-              initial={{ translateY: "0px" }}
-              animate={
-                open
-                  ? { rotate: "-45deg", translateY: "-4px" }
-                  : { rotate: "0deg", translateY: "0px", scaleX: 1 }
-              }
-            />
-          </Button>
+          <div className="flex items-center gap-2">
+            <ThemeSwitcher />
+            <Button
+              variant="ghost"
+              size="icon"
+              aria-expanded={open}
+              aria-label="Toggle Mobile Menu"
+              onClick={handleToggleMobileMenu}
+              className="flex aspect-square h-fit select-none flex-col items-center justify-center rounded-full"
+            >
+              <motion.div
+                className="w-5 origin-center border-t-2 border-primary"
+                initial={{ translateY: "0px" }}
+                animate={
+                  open
+                    ? { rotate: "45deg", translateY: "6px" }
+                    : { rotate: "0deg", translateY: "0px" }
+                }
+                transition={{ bounce: 0, duration: 0.1 }}
+              />
+              <motion.div
+                className="w-5 origin-center border-t-2 border-primary"
+                transition={{ bounce: 0, duration: 0.1 }}
+                initial={{ translateY: "0px" }}
+                animate={
+                  open
+                    ? { rotate: "-45deg", translateY: "-4px" }
+                    : { rotate: "0deg", translateY: "0px", scaleX: 1 }
+                }
+              />
+            </Button>
+          </div>
         </div>
       </div>
       {open && (
@@ -145,7 +149,7 @@ function MainMobileMenu({
                 rel={item.external ? "noopener noreferrer" : undefined}
                 className={cn(
                   buttonVariants({ variant: "ghost" }),
-                  "w-full justify-start"
+                  "w-full justify-start text-foreground"
                 )}
                 onClick={onLinkClicked}
               >

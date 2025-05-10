@@ -1,7 +1,15 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
 export default function FooterComponent() {
+  const { theme } = useTheme();
+  const twitterIcon =
+    theme === "dark" ? "/icons/twitter-white.svg" : "/icons/twitter.svg";
+  const githubIcon =
+    theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
   return (
     <div className="w-full z-10 px-6 md:px-16 pb-4 md:pb-6">
       <div className="w-full border-t-1 border-white" />
@@ -23,7 +31,7 @@ export default function FooterComponent() {
         <div className="flex flex-col items-center justify-center lg:flex-row gap-4">
           <Link href="https://github.com/growly-foundation" target="_blank">
             <Image
-              src={"/icons/github-white.svg"}
+              src={githubIcon}
               width={24}
               height={24}
               alt={"Github logo"}
@@ -32,7 +40,7 @@ export default function FooterComponent() {
           </Link>
           <Link href="https://x.com/GrowlyFND" target="_blank">
             <Image
-              src={"/icons/twitter-white.svg"}
+              src={twitterIcon}
               width={24}
               height={24}
               alt={"Twitter logo"}

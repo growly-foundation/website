@@ -1,9 +1,8 @@
-import { Card, CardContent } from "@/components/ui/card";
+import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
 
 export type Link = {
-  icon: string;
   name: string;
   url: string;
 };
@@ -13,40 +12,55 @@ export type Project = {
   slug: string;
   image: string;
   description: string;
-  color: string;
   links: Link[];
 };
 
 export default function ProjectCard({ project }: { project: Project }) {
+  const { theme } = useTheme();
+  const websiteIcon =
+    theme === "dark" ? "/icons/dribble-white.svg" : "/icons/dribble.svg";
+  const githubIcon =
+    theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
+
   return (
-    <Card className="max-w-[416px] h-fit p-0 m-0 rounded-[50px] bg-gradient-to-bl from-[#171717] to-[#0E0E0E] overflow-hidden">
-      <CardContent className="w-full h-fit m-0 px-0 pt-0 pb-14 flex flex-col items-center justify-between gap-7 relative">
-        <Image
-          src={project.image}
-          alt={`${project.name} logo`}
-          width={200}
-          height={200}
-        />
-        <div className="flex flex-col items-start justify-start gap-2 w-full h-[120px] px-6 pb-2">
-          <Link href={`/projects/${project.slug}`}>
-            <h2 className="text-xl font-bold text-left">{project.name}</h2>
-          </Link>
-          <p className="text-sm opacity-70 text-left font-heading">
-            {project.description}
-          </p>
-          <div className="w-full h-[32px] flex items-start justify-start gap-2">
-            {project.links.map((link) => (
-              <Link
-                key={link.name}
-                href={link.url}
-                target={link.url.includes("http") ? "_blank" : undefined}
-              >
-                <Image height={24} width={24} src={link.icon} alt={link.name} />
-              </Link>
-            ))}
-          </div>
+    <div className="flex flex-col items-center bg-muted rounded-2xl shadow-md p-6 mx-2 my-4 max-w-sm transition-transform hover:scale-105">
+      <Image
+        src={project.image}
+        alt={`${project.name} logo`}
+        width={150}
+        height={150}
+        className="bg-muted rounded-2xl object-cover"
+      />
+      <div className="flex flex-col items-start justify-start gap-2 w-full px-6 pb-2">
+        <Link href={`/projects/${project.slug}`}>
+          <h2 className="text-xl font-bold text-left text-foreground">
+            {project.name}
+          </h2>
+        </Link>
+        <p className="text-sm opacity-80 text-left font-heading text-muted-foreground">
+          {project.description}
+        </p>
+        <div className="flex flex-row items-center gap-3 mt-2">
+          {project.links.map((link) => (
+            <Link
+              key={link.name}
+              href={link.url}
+              target={link.url.includes("http") ? "_blank" : undefined}
+              className="hover:opacity-80 transition-opacity"
+            >
+              <span className="inline-flex items-center justify-center w-8 h-8 text-foreground">
+                <Image
+                  height={24}
+                  width={24}
+                  src={link.name === "Website" ? websiteIcon : githubIcon}
+                  alt={link.name}
+                  style={{ filter: "invert(var(--is-dark))" }}
+                />
+              </span>
+            </Link>
+          ))}
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   );
 }

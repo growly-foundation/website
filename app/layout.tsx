@@ -24,7 +24,7 @@ export default function RootLayout({
           fontSans.className
         )}
       >
-        <ThemeProvider attribute="class" defaultTheme="dark">
+        <ThemeProvider attribute="class" defaultTheme="light">
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="pt-24 z-0">{children}</main>

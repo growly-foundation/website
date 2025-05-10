@@ -5,9 +5,9 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
-import { Button } from "@/components/ui/button";
 import { MENU_LINKS } from "@/components/menu-links";
 import { MobileMenu } from "@/components/mobile-menu";
+import ThemeSwitcher from "@/components/theme-switcher";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -23,7 +23,7 @@ export function Navbar(): React.JSX.Element {
   return (
     <section className="fixed inset-x-0 top-0 z-40 py-4 px-5">
       <div className="flex w-full items-center justify-center text-center py-4">
-        <nav className="hidden rounded-[120px] w-full px-5 py-3 bg-gradient-to-tr from-[#171717] to-[#0E0E0E] justify-between lg:flex">
+        <nav className="hidden rounded-[120px] w-full px-5 py-3 bg-gradient-to-tr dark:from-[#171717] dark:to-[#0E0E0E] from-[#f8f9fa] to-[#e9ecef] justify-between lg:flex">
           <div className="flex items-center gap-x-9">
             <Link href="/" className="flex items-center gap-2">
               <Image
@@ -58,7 +58,7 @@ export function Navbar(): React.JSX.Element {
                       active={pathname.startsWith(item.href || "")}
                       className={cn(
                         navigationMenuTriggerStyle(),
-                        "rounded-xl text-[15px] font-normal data-[active]:bg-accent bg-transparent"
+                        "rounded-xl text-[15px] font-normal data-[active]:bg-accent bg-transparent text-foreground"
                       )}
                     >
                       <Link
@@ -75,13 +75,16 @@ export function Navbar(): React.JSX.Element {
             </NavigationMenu>
           </div>
           <div className="flex items-center gap-2">
-            <Button
+            <div className="mr-2">
+              <ThemeSwitcher />
+            </div>
+            {/* <Button
               variant="secondary"
               className="px-[22px] md:px-[44px] py-[24px] font-extrabold text-lg transition-all duration-300"
               asChild
             >
               <Link href="/#cta">Contact Us</Link>
-            </Button>
+            </Button> */}
           </div>
         </nav>
         <MobileMenu className="lg:hidden" />

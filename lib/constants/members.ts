@@ -14,7 +14,7 @@ export const MEMBERS = [
     description: "Co-founder, Product Lead",
     twitter: "https://x.com/thiewnngan",
     linkedin: "https://www.linkedin.com/in/thienngan/",
-    image: "/team/ngan.webp",
+    image: "/team/ngan-v2.webp",
   },
   {
     name: "Minh",
