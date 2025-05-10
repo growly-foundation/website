@@ -1,57 +1,26 @@
 "use client";
 
-import { Button } from "@/components/ui/button";
-import { useMemo, useState } from "react";
-
-import { FILTER, PROJECTS } from "@/lib/constants";
+import { PROJECTS } from "@/lib/constants";
 import ProjectCard from "./project-card";
 
-interface ProjectsProps {
-  limit?: number;
-  showViewAll?: boolean;
-}
-
-const Projects = ({ limit = 3, showViewAll = true }: ProjectsProps) => {
-  const [selectedFilter] = useState<FILTER>(FILTER.ALL);
-
-  const filteredProjects = useMemo(() => {
-    const filtered = PROJECTS.filter((project) => {
-      if (selectedFilter === FILTER.ALL) return true;
-      return project.type === selectedFilter;
-    });
-    // Only limit if limit is provided
-    return limit ? filtered.slice(0, limit) : filtered;
-  }, [selectedFilter, limit]);
-
+export default function Projects() {
   return (
-    <section id="portfolio" className="w-full bg-background py-20 sm:py-28">
-      <div className=" px-4 md:px-6">
-        <div className="flex flex-col items-center space-y-4 text-center">
-          <p className="text-sm font-heading tracking-wider text-tertiary">
-            Portfolio
-          </p>
-          <h2 className="font-clash-display text-4xl font-bold md:text-5xl">
-            Some of our projects
-          </h2>
-        </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 mt-8">
-          {filteredProjects.map((project) => (
-            <ProjectCard key={project.name} project={project} />
-          ))}
-        </div>
-        {showViewAll && (
-          <div className="mt-12 flex justify-center">
-            <Button
-              size="lg"
-              color="default"
-              className="px-[22px] md:px-[44px] font-bold rounded-full"
-              asChild
-            ></Button>
-          </div>
-        )}
+    <section
+      id="projects"
+      className="w-full bg-background py-16 px-4 md:px-12 flex flex-col items-center"
+    >
+      <div className="flex flex-col items-center text-center gap-4 mb-8">
+        <h2 className="text-2xl font-semibold">Our Projects</h2>
+        <p className="text-muted-foreground max-w-2xl">
+          Explore some of the projects we've built to help teams work smarter
+          and faster.
+        </p>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto justify-items-center">
+        {PROJECTS.slice(0, 2).map((project) => (
+          <ProjectCard key={project.name} project={project} />
+        ))}
       </div>
     </section>
   );
-};
-
-export default Projects;
+}

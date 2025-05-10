@@ -27,7 +27,6 @@ export default function Features() {
       id="features"
       className="flex flex-col md:flex-row items-center justify-between gap-8 py-16 px-4 md:px-12 w-full max-w-6xl mx-auto"
     >
-      {/* Features Content */}
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6">
         <h2 className="text-2xl font-semibold mb-2">Our Product</h2>
         <p className="text-muted-foreground mb-4">
