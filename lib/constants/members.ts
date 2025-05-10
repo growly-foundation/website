@@ -22,7 +22,7 @@ export const MEMBERS = [
     twitter: "https://x.com/pcminh0505",
     github: "https://github.com/pcminh0505",
     linkedin: "https://www.linkedin.com/in/pcminh0505/",
-    url: "https://pcminh0505.vercel.app/",
+    url: "https://pcminh.tech/",
     image: "/team/minh.webp",
   },
 ];
