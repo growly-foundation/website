@@ -32,7 +32,7 @@ export default function TeamCard({ member }: { member: Member }) {
         height={120}
         width={120}
         alt={member.name}
-        className="rounded-full object-cover border-2 border-primary mb-4 shadow-lg w-[120px] h-[120px]"
+        className="rounded-full object-cover border-2 mb-4 shadow-lg w-[120px] h-[120px]"
       />
       <div className="flex flex-col items-center mb-2">
         <h3 className="text-xl font-bold mb-1">{member.name}</h3>

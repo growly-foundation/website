@@ -29,7 +29,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         alt={`${project.name} logo`}
         width={150}
         height={150}
-        className="bg-muted rounded-2xl object-cover"
+        className="rounded-2xl object-cover border-2 mb-4 shadow-lg"
       />
       <div className="flex flex-col items-start justify-start gap-2 w-full px-6 pb-2">
         <Link href={`/projects/${project.slug}`}>
