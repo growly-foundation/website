@@ -17,12 +17,27 @@ export type Project = {
 
 export default function ProjectCard({ project }: { project: Project }) {
   const { theme } = useTheme();
-  const websiteIcon = "/icons/devfolio.svg";
+  const websiteIcon =
+    theme === "dark" ? "/icons/dribble-white.svg" : "/icons/dribble.svg";
+  const devfolioIcon = "/icons/devfolio.svg";
   const githubIcon =
     theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
 
+  function getIcon(name: string) {
+    switch (name) {
+      case "Website":
+        return websiteIcon;
+      case "Github":
+        return githubIcon;
+      case "Devfolio":
+        return devfolioIcon;
+      default:
+        return "";
+    }
+  }
+
   return (
-    <div className="flex flex-col items-center bg-muted rounded-2xl shadow-md p-6 mx-2 my-4 max-w-sm transition-transform hover:scale-105">
+    <div className="flex flex-col items-center bg-muted rounded-2xl shadow-md p-6 mx-2 my-4 w-70 h-100 max-w-sm transition-transform hover:scale-105">
       <Image
         src={project.image}
         alt={`${project.name} logo`}
@@ -39,6 +54,7 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="text-sm opacity-80 text-left font-heading text-muted-foreground">
           {project.description}
         </p>
+
         <div className="flex flex-row items-center gap-3 mt-2">
           {project.links.map((link) => (
             <Link
@@ -51,7 +67,7 @@ export default function ProjectCard({ project }: { project: Project }) {
                 <Image
                   height={24}
                   width={24}
-                  src={link.name === "Website" ? websiteIcon : githubIcon}
+                  src={getIcon(link.name)}
                   alt={link.name}
                   style={{ filter: "invert(var(--is-dark))" }}
                 />

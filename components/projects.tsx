@@ -15,8 +15,8 @@ export default function Projects() {
           Explore some of the projects we&apos;ve built
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-3xl mx-auto justify-items-center">
-        {PROJECTS.slice(0, 2).map((project) => (
+      <div className="flex flex-col md:flex-row justify-center items-center gap-8 w-full">
+        {PROJECTS.slice(0, 3).map((project) => (
           <ProjectCard key={project.name} project={project} />
         ))}
       </div>

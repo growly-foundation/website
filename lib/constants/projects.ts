@@ -7,6 +7,27 @@ export enum FILTER {
 
 export const PROJECTS = [
   {
+    name: "Suite",
+    slug: "suite",
+    description: "Empower DeFi Adoption with AI-powered Engine",
+    image: "/projects/suite.png",
+    type: FILTER.HACKATHONS,
+    links: [
+      {
+        name: "Devfolio",
+        url: "https://devfolio.co/projects/growly-smarlet-1ad7",
+      },
+      {
+        name: "Github",
+        url: "https://github.com/growly-foundation/suite",
+      },
+      {
+        name: "Website",
+        url: "https://getgrowly.app/",
+      },
+    ],
+  },
+  {
     name: "Growly",
     slug: "growly",
     description:
@@ -15,7 +36,7 @@ export const PROJECTS = [
     type: FILTER.HACKATHONS,
     links: [
       {
-        name: "Website",
+        name: "Devfolio",
         url: "https://devfolio.co/projects/growly-0d3e",
       },
     ],
@@ -29,12 +50,16 @@ export const PROJECTS = [
     type: FILTER.HACKATHONS,
     links: [
       {
-        name: "Website",
+        name: "Devfolio",
         url: "https://devfolio.co/projects/onchainbuster-9549",
       },
       {
         name: "Github",
         url: "https://github.com/growly-foundation/onchainbuster",
+      },
+      {
+        name: "Website",
+        url: "https://onchainbuster.vercel.app/",
       },
     ],
   },

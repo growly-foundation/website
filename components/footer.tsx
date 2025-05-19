@@ -15,7 +15,7 @@ export default function FooterComponent() {
       <div className="w-full border-t-1 border-white" />
       <div className="rounded-[120px] px-0 md:px-5 py-3 justify-between items-center flex z-[100] pt-8">
         <Image
-          src={"/mascot.svg"}
+          src={"/logo.svg"}
           height={24}
           width={24}
           alt="Growly Foundation logo white"

@@ -27,14 +27,14 @@ export function Navbar(): React.JSX.Element {
           <div className="flex items-center gap-x-9">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src={"/mascot.svg"}
+                src={"/logo.svg"}
                 className="hidden md:block w-[120px] h-[40px]"
                 width={120}
                 height={40}
                 alt="Growly Foundation logo desktop"
               />
               <Image
-                src={"/mascot.svg"}
+                src={"/logo.svg"}
                 className="block md:hidden mx-1 w-[30px] h-[30px]"
                 height={30}
                 width={30}
