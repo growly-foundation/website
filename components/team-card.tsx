@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import Image from "next/image";
 import Link from "next/link";
+import { getIconPath } from "@/lib/utils/icon-utils";
 
 type Member = {
   name: string;
@@ -16,14 +17,6 @@ type Member = {
 
 export default function TeamCard({ member }: { member: Member }) {
   const { theme } = useTheme();
-  const websiteIcon =
-    theme === "dark" ? "/icons/dribble-white.svg" : "/icons/dribble.svg";
-  const linkedinIcon =
-    theme === "dark" ? "/icons/linkedin-white.svg" : "/icons/linkedin.svg";
-  const githubIcon =
-    theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
-  const twitterIcon =
-    theme === "dark" ? "/icons/twitter-white.svg" : "/icons/twitter.svg";
 
   return (
     <div className="flex flex-col items-center bg-muted rounded-2xl shadow-md p-6 mx-2 my-4 w-70 max-w-sm transition-transform hover:scale-105">
@@ -43,7 +36,7 @@ export default function TeamCard({ member }: { member: Member }) {
       <div className="flex flex-row items-center gap-3 mt-2">
         <Link href={member.twitter} target="_blank">
           <Image
-            src={twitterIcon}
+            src={getIconPath("Twitter", theme)}
             height={24}
             width={24}
             alt={"Twitter logo"}
@@ -52,7 +45,7 @@ export default function TeamCard({ member }: { member: Member }) {
         {member.github && (
           <Link href={member.github} target="_blank">
             <Image
-              src={githubIcon}
+              src={getIconPath("Github", theme)}
               height={20}
               width={20}
               alt={"GitHub logo"}
@@ -62,7 +55,7 @@ export default function TeamCard({ member }: { member: Member }) {
         {member.linkedin && (
           <Link href={member.linkedin} target="_blank">
             <Image
-              src={linkedinIcon}
+              src={getIconPath("Linkedin", theme)}
               height={20}
               width={20}
               alt={"LinkedIn logo"}
@@ -72,7 +65,7 @@ export default function TeamCard({ member }: { member: Member }) {
         {member.url && (
           <Link href={member.url} target="_blank">
             <Image
-              src={websiteIcon}
+              src={getIconPath("Website", theme)}
               height={22}
               width={22}
               alt={"Personal website logo"}

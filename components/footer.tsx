@@ -3,19 +3,17 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useTheme } from "next-themes";
+import { getIconPath } from "@/lib/utils/icon-utils";
 
 export default function FooterComponent() {
   const { theme } = useTheme();
-  const twitterIcon =
-    theme === "dark" ? "/icons/twitter-white.svg" : "/icons/twitter.svg";
-  const githubIcon =
-    theme === "dark" ? "/icons/github-white.svg" : "/icons/github.svg";
+
   return (
     <div className="w-full z-10 px-6 md:px-16 pb-4 md:pb-6">
       <div className="w-full border-t-1 border-white" />
       <div className="rounded-[120px] px-0 md:px-5 py-3 justify-between items-center flex z-[100] pt-8">
         <Image
-          src={"/logo.svg"}
+          src={getIconPath("Logo")}
           height={24}
           width={24}
           alt="Growly Foundation logo white"
@@ -31,7 +29,7 @@ export default function FooterComponent() {
         <div className="flex flex-col items-center justify-center lg:flex-row gap-4">
           <Link href="https://github.com/growly-foundation" target="_blank">
             <Image
-              src={githubIcon}
+              src={getIconPath("Github", theme)}
               width={24}
               height={24}
               alt={"Github logo"}
@@ -40,7 +38,7 @@ export default function FooterComponent() {
           </Link>
           <Link href="https://x.com/GrowlyFND" target="_blank">
             <Image
-              src={twitterIcon}
+              src={getIconPath("Twitter", theme)}
               width={24}
               height={24}
               alt={"Twitter logo"}

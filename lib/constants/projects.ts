@@ -9,7 +9,8 @@ export const PROJECTS = [
   {
     name: "Suite",
     slug: "suite",
-    description: "Empower DeFi Adoption with AI-powered Engine",
+    description:
+      "Empower DeFi Adoption with AI-powered Engine. Focus on shipping great products, we'll handle the connection between your users and your app.",
     image: "/projects/suite.png",
     type: FILTER.HACKATHONS,
     links: [
@@ -32,7 +33,7 @@ export const PROJECTS = [
     slug: "growly",
     description:
       "Personalize your investment decisions. Optimize your portfolio management. Powered by elizaOS",
-    image: "/projects/growly.webp",
+    image: "/projects/growly.png",
     type: FILTER.HACKATHONS,
     links: [
       {
@@ -46,7 +47,7 @@ export const PROJECTS = [
     slug: "onchainbuster",
     description:
       "More than just your onchain footprint. Dive into Base with recommendations tailored to your interests.",
-    image: "/projects/onchainbuster.webp",
+    image: "/projects/onchainbuster.png",
     type: FILTER.HACKATHONS,
     links: [
       {
