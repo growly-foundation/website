@@ -20,13 +20,15 @@ export default function TeamCard({ member }: { member: Member }) {
 
   return (
     <div className="flex flex-col items-center bg-muted rounded-2xl shadow-md p-6 mx-2 my-4 w-70 max-w-sm transition-transform hover:scale-105">
-      <Image
-        src={member.image}
-        height={120}
-        width={120}
-        alt={member.name}
-        className="rounded-full object-cover border-2 mb-4 shadow-lg w-[120px] h-[120px]"
-      />
+      <div className="relative w-[120px] h-[120px] mb-4 overflow-hidden rounded-full">
+        <Image
+          src={member.image}
+          height={160}
+          width={160}
+          alt={member.name}
+          className="absolute object-cover border-2 shadow-lg scale-140 hover:scale-170 transition-transform duration-500 origin-bottom"
+        />
+      </div>
       <div className="flex flex-col items-center mb-2">
         <h3 className="text-xl font-bold mb-1">{member.name}</h3>
         <h4 className="text-sm text-muted-foreground text-center">
