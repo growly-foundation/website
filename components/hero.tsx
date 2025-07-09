@@ -7,8 +7,8 @@ export default function Hero() {
       <div className="flex-1 flex flex-col items-center md:items-start text-center md:text-left gap-6">
         <h1 className="text-4xl sm:text-5xl font-bold">Growly Foundation</h1>
         <p className="text-lg text-muted-foreground max-w-xl">
-          We are a non-profit organization that aims to support the growth of
-          the Web3.0 ecosystem.
+          We aim to support the growth of the Web3.0 ecosystem through user
+          personas and agentic workflows.
         </p>
         <a
           href="#projects"
